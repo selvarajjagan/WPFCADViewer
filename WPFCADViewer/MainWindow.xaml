@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPFCADViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCADViewer"
+        xmlns:h="http://helix-toolkit.org/wpf"
+        mc:Ignorable="d"
+        Title="WPF CAD Viewer" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Height="30" Width="100" Margin="10" Content="Load Obj File" Command="{Binding LoadObjFileCommand}"/>
+        </StackPanel>
+
+        <h:HelixViewport3D x:Name="hvp" Grid.Row="1" Background="#F0F0F0" Loaded="HelixViewport_Loaded" ShowViewCube="True"/>
+
+    </Grid>
+</Window>
